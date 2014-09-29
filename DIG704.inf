@@ -1,0 +1,62 @@
+
+[Version]
+Signature=$Windows NT$
+Class=MEDDevice
+ClassGUID={F6A83B7E-CFDD-4f63-B9C2-D59FAAD64E67}
+Provider=%String0%
+DriverVer=10/27/2010,1.14.2.0
+
+[DestinationDirs]
+DefaultDestDir=12
+CopyAPIFiles=11
+
+[ClassInstall32]
+AddReg=AddClassEntries
+
+[AddClassEntries]
+HKR,,,0,%ClassDesc%
+HKR,,Icon,,-5
+
+[Manufacturer]
+%String1%=SECTION_0
+
+[SECTION_0]
+%String3%=DIG704PCI_Device,PCI\VEN_1658&DEV_0704&SUBSYS_905410B5&REV_0B,<CompatibleID(s)>
+%String4%=DIG704PCI_Device,PCI\VEN_1658&DEV_0704&SUBSYS_07040002,<CompatibleID(s)>
+%String5%=DIG704PCI_Device,PCI\VEN_1658&DEV_0704&SUBSYS_905410B5&REV_0B,<CompatibleID(s)>
+
+[DIG704PCI_Device.NT]
+CopyFiles=CopyDriver, CopyAPIFiles
+
+[CopyDriver]
+dig704.sys
+
+[CopyAPIFiles]
+dg704api.dll
+
+[DIG704PCI_Device.NT.Services]
+AddService = DIG704, 2, DIG704PCI_ServiceInstallSection
+
+[DIG704PCI_ServiceInstallSection]
+DisplayName=%String3%
+ServiceType    = 1
+StartType      = 2
+ErrorControl   = 1
+ServiceBinary  = %12%\dig704.sys
+Reboot
+
+[SourceDisksNames]
+1 = %DiskId1%,,,""
+
+[SourceDisksFiles]
+dig704.sys  = 1,,
+dg704api.dll = 1,,
+
+[Strings]
+String0="Med_Associates, Inc."
+String1="Med_Associates, Inc."
+String3="DIG-704 PCI - Interface with Millisecond Timer and Interrupts"
+String4="DIG-704 PCI-2 - Interface with Millisecond Timer and Interrupts"
+String5="DIG-750 PCI - Standalone Interface with Millisecond Timer and Interrupts"
+ClassDesc="Med_Associates Devices"
+DiskId1 = "DIG704 Device Installation Disk #1"
