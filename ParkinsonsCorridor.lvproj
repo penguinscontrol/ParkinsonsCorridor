@@ -46,6 +46,7 @@
 		<Item Name="Beam.vi" Type="VI" URL="../Beam.vi"/>
 		<Item Name="Outputs.vi" Type="VI" URL="../Outputs.vi"/>
 		<Item Name="read_log.vi" Type="VI" URL="../read_log.vi"/>
+		<Item Name="Main_Text_save.vi" Type="VI" URL="../Main_Text_save.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Simple Error Handler.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Simple Error Handler.vi"/>
@@ -105,7 +106,7 @@
 				<Property Name="Destination[1].path" Type="Path">../Main Application/data</Property>
 				<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{538D70BE-8FE6-471B-8299-8EAD7FA8C3FC}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{68448134-63E1-4771-91CA-0B969E4DCE9D}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Main.vi</Property>
