@@ -104,7 +104,7 @@
 				<Property Name="Destination[1].path" Type="Path">../Main Application/data</Property>
 				<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{635A2C38-8DC8-474C-8AE7-38ECA3B0BA64}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{538D70BE-8FE6-471B-8299-8EAD7FA8C3FC}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Main.vi</Property>
