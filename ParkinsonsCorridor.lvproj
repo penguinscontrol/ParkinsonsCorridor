@@ -45,6 +45,7 @@
 		<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
 		<Item Name="Beam.vi" Type="VI" URL="../Beam.vi"/>
 		<Item Name="Outputs.vi" Type="VI" URL="../Outputs.vi"/>
+		<Item Name="read_log.vi" Type="VI" URL="../read_log.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Simple Error Handler.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Simple Error Handler.vi"/>
