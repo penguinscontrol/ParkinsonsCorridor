@@ -1,0 +1,2 @@
+remove beep from food dispension
+make a training version of the program that automatically dispenses food but still logs when the feeder beam is tripped
