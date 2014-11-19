@@ -147,7 +147,7 @@
 				<Property Name="Destination[1].path" Type="Path">../Trainer/data</Property>
 				<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{438AC47F-C123-4592-A928-FBA00DB1CFE7}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{2F316EA9-6543-4F5C-81D2-9F287F6F42D0}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Main.vi</Property>
