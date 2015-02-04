@@ -23,20 +23,7 @@
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="Project Documentation" Type="Folder">
-			<Item Name="Documentation Images" Type="Folder">
-				<Item Name="loc_open_data_typedef.png" Type="Document" URL="../documentation/loc_open_data_typedef.png"/>
-				<Item Name="loc_open_states_typedef.png" Type="Document" URL="../documentation/loc_open_states_typedef.png"/>
-				<Item Name="loc_simple_state_machine.png" Type="Document" URL="../documentation/loc_simple_state_machine.png"/>
-				<Item Name="loc_state_transition.png" Type="Document" URL="../documentation/loc_state_transition.png"/>
-				<Item Name="loc_transition_error.png" Type="Document" URL="../documentation/loc_transition_error.png"/>
-				<Item Name="loc_use_state_data.png" Type="Document" URL="../documentation/loc_use_state_data.png"/>
-				<Item Name="loc_conditional_state_transition.png" Type="Document" URL="../documentation/loc_conditional_state_transition.png"/>
-				<Item Name="loc_new_button.png" Type="Document" URL="../documentation/loc_new_button.png"/>
-				<Item Name="loc_new_button_transition.png" Type="Document" URL="../documentation/loc_new_button_transition.png"/>
-				<Item Name="loc_new_button_value_change.png" Type="Document" URL="../documentation/loc_new_button_value_change.png"/>
-				<Item Name="loc_new_state.png" Type="Document" URL="../documentation/loc_new_state.png"/>
-			</Item>
-			<Item Name="Simple State Machine Documentation.html" Type="Document" URL="../documentation/Simple State Machine Documentation.html"/>
+			<Item Name="Documentation Images" Type="Folder"/>
 		</Item>
 		<Item Name="Type Definitions" Type="Folder">
 			<Item Name="Data.ctl" Type="VI" URL="../controls/Data.ctl"/>
