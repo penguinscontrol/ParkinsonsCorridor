@@ -3,7 +3,7 @@ clear; clc; close all;
 
 load('20141125_Leon_Tunnel');
 vidObj = ...
-    VideoReader('C:\Users\Radu Darie\Google Drive\ODBS\practice_video\20141119_Leon_Tunnel_1.mpg');
+    VideoReader('E:\Google Drive\ODBS\practice_video\20141119_Leon_Tunnel_1.mpg');
 startTime = 22;
 
 vidHeight = vidObj.Height;
