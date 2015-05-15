@@ -1,4 +1,4 @@
-function [ output_video ] = kin_analysis_fun( kin_str, vid_str, offset, savetofile )
+function [ output_video ] = kin_analysis_fun_proof( kin_str, vid_str, offset, savetofile )
 %kin_analysis_fun.m Analysis of kinematic variables
 %   Detailed explanation goes here
 
@@ -21,8 +21,9 @@ end
 vidHeight = vidObj.Height;
 vidWidth = vidObj.Width;
 
-pc_img = zeros(vidHeight, vidWidth); % Proof of concept image
-pc_count = 0; % Count # of overlays in pc_img
+n_steps = 3;
+pc_img = cell(1,n_steps); % Proof of concept image
+pc_count = 1; % Count # of overlays in pc_img
 
 nsamp = length(kin.RedX);
 lowbound = 100; % x locations less than 100 are discounted because they
@@ -93,25 +94,31 @@ t = zeros(1,nsamp); count = 1;
 for a = 1:nsamp
     if vidObj.CurrentTime > startTime;
         clc;
-        drawnow;
         fprintf('Frame %d of %d\n', a, nsamp);
         vidFrame = readFrame(vidObj);
         t(count) = vidObj.CurrentTime;
         
-        if redvalid(a)
-            vidFrame = insertShape(vidFrame,'circle',...
-                [kin.RedX(a) kin.RedY(a) 5],'LineWidth', 5, 'Color', 'red');
-        end
-    
-        if bluvalid(a)
-            vidFrame = insertShape(vidFrame,'circle',...
-                [kin.BlueX(a) kin.BlueY(a) 5],'LineWidth', 5, 'Color', 'blue');
-        end
-    
         if redlift(a)
-            pc_img = pc_img + insertShape(vidFrame,'circle',...
-                [kin.RedX(a) kin.RedY(a) 5],'LineWidth', 5, 'Color', 'red');
+            
+            if pc_count <= n_steps
+             temp_frame = insertShape(vidFrame,'circle',...
+                [kin.BlueX(a) kin.BlueY(a) 10],'LineWidth', 10, 'Color', [0 255 255]);
+             temp_frame = insertShape(temp_frame,'circle',...
+                [kin.RedX(a-1) kin.RedY(a-1) 10],'LineWidth', 10, 'Color', [255 0 255]);
+            pc_img{pc_count} = temp_frame;
             pc_count = pc_count+1;
+            elseif pc_count == n_steps+1
+                pc_img = imlincomb(1/n_steps, pc_img{1}, ...
+                    1/n_steps, pc_img{2}, ...
+                    1/n_steps, pc_img{3} ...
+                    );
+                figure;
+                imshow(pc_img);
+                print('-djpeg', 'pc_img');
+                close;
+                n_steps = n_steps + 1;
+            end
+            
             vidFrame = insertText(vidFrame, [50 50], 'Red liftoff');
         end
     
@@ -128,6 +135,18 @@ for a = 1:nsamp
         end
         
         vidFrame = insertText(vidFrame, [50 250], sprintf('T = %4.4f', t(count)));
+        
+        if redvalid(a)
+            vidFrame = insertShape(vidFrame,'circle',...
+                [kin.RedX(a) kin.RedY(a) 5],'LineWidth', 5, 'Color', 'red');
+        end
+    
+        if bluvalid(a)
+            vidFrame = insertShape(vidFrame,'circle',...
+                [kin.BlueX(a) kin.BlueY(a) 5],'LineWidth', 5, 'Color', 'blue');
+        end
+        
+        drawnow;
         
         if savetofile
             writeVideo(writerObj, vidFrame);

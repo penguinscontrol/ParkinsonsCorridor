@@ -1,4 +1,4 @@
-%%
+-%%
 clear; clc; close all;
 
 load('20141125_Leon_Tunnel');
